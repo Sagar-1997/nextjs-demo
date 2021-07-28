@@ -30,7 +30,7 @@ export async function getStaticPaths() {
   //it tell that we want all collections but only Id field
   client.close();
   return {
-    fallback: false, //false means all params are present //true means not all params present
+    fallback: "blocking", //false means all params are present //true means not all params present
     paths: meetups.map((meet) => ({
       params: {
         meetupId: meet._id.toString(),
